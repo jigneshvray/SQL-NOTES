@@ -134,4 +134,7 @@ SQL> SELECT MAX(AVE(sal))
 
     select country, avg(weight) from survey group by country;
 
+
+    
+
     
