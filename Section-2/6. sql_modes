@@ -1,0 +1,11 @@
+## Refer This link for sql_modes
+
+https://dev.mysql.com/doc/refman/5.7/en/sql-mode.html#sql-mode-full
+
+Basic Example :
+
+
+SELECT @@GLOBAL.sql_mode;
+SELECT @@SESSION.sql_mode;
+
+

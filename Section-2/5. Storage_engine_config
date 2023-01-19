@@ -1,0 +1,33 @@
+
+## "Storage engines" are MySQL components that handle the SQL operations for different table types.
+
+# COAMMAND : SHOW ENGINES;
+
+Example : InnoDB, MYISAM
+
+## set engine while creating database
+
+# create TABLE student (id int, username text) engine=INNODB;
+
+## SET DEFAULT ENGINE :
+
+# SET default_storage_engine=INNODB   // we can do it in the mysql.cnf file as well.
+
++--------------------+---------+----------------------------------------------------------------+--------------+------+------------+
+| Engine             | Support | Comment                                                        | Transactions | XA   | Savepoints |
++--------------------+---------+----------------------------------------------------------------+--------------+------+------------+
+| InnoDB             | YES     | Supports transactions, row-level locking, and foreign keys     | YES          | YES  | YES        |
+| MRG_MYISAM         | YES     | Collection of identical MyISAM tables                          | NO           | NO   | NO         |
+| MEMORY             | YES     | Hash based, stored in memory, useful for temporary tables      | NO           | NO   | NO         |
+| BLACKHOLE          | YES     | /dev/null storage engine (anything you write to it disappears) | NO           | NO   | NO         |
+| MyISAM             | DEFAULT | MyISAM storage engine                                          | NO           | NO   | NO         |
+| CSV                | YES     | CSV storage engine                                             | NO           | NO   | NO         |
+| ARCHIVE            | YES     | Archive storage engine                                         | NO           | NO   | NO         |
+| PERFORMANCE_SCHEMA | YES     | Performance Schema                                             | NO           | NO   | NO         |
+| FEDERATED          | NO      | Federated MySQL storage engine                                 | NULL         | NULL | NULL       |
++--------------------+---------+----------------------------------------------------------------+--------------+------+------------+
+
+## show database engine name from cmd. 
+
+# select table_name,engine from information_schema.tables where table_name= 'table_name' and table_schema = 'db_name';
+

@@ -1,0 +1,19 @@
+
+//UBUNTU 
+
+## Locate to bin dir of mysql
+
+cd /usr/bin/mysql  
+
+cd /usr/local/mysql/bin
+
+Now use command " mysql -u root/user_name -p "password";
+
+//WINDOWS
+
+## Locate to the dir of mysql 
+
+In my case, I am using wampp so my dir is "  C:\wamp64\bin\mysql\mysql5.7.36\bin "
+
+Again command is same " mysql -u root/user_name -p "password".
+

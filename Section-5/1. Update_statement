@@ -1,0 +1,16 @@
+## The UPDATE statement is used to modify the existing records in a table.
+
+# When safe mode is enabled then we need to define id as well.
+
+# We can disable safe mode using below command.
+
+# set  sql_safe_updates = 0;  
+
+// 0 = disable
+// 1 = enabled
+
+# statement :   UPDATE table_name SET column1 = value1, column2 = value2, ... WHERE condition;
+
+SAFE UPDATE IS A GOOD PRACTISE.
+
+

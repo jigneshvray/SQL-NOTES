@@ -1,0 +1,10 @@
+# Let's make database first.
+
+CREATE DATABASE "Name of database";
+
+Now create table in this database;
+
+CREATE TABLE  "Table Name" ('column_name_1 data_type', 'column_name_2 data_type'...... n );
+
+
+

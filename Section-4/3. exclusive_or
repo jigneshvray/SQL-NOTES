@@ -1,0 +1,4 @@
+
+-- 6. Select all rows where either the name contains an “o” or the id is less than 5, but not both.
+
+select * from users where name like '%o%' xor id < 5;

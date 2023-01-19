@@ -1,0 +1,137 @@
+
+### Use HAVING instead of WHERE.
+
+Using Having-Clause
+To exclude some group results, use Having-clause.
+
+For example,
+
+SQL> SELECT dept, MAX(sal)
+
+     FROM employee
+
+     GROUP BY dept
+
+           HAVING MAX(sal) > 2000;
+
+Note that you CANNOT use WHERE clause to restrict  groups. For example, the following is illegal:
+
+SQL> SELECT dept, MAX(sal)
+
+     FROM employee
+
+     WHERE MAX(sal) > 2000
+
+     GROUP BY dept;
+
+This is because the group function cannot be used in WHERE clause.
+
+
+
+
+Overview
+Group functions are mathematical functions to operate on sets of rows to give one result per set. The types of group functions (also called aggregate functions) are:
+
+AVG, that calculates the average of the specified columns in a set of rows,
+COUNT, calculating the number of rows in a set.
+MAX, calculating the maximum,
+MIN, calculating the minimum,
+STDDEV, calculating the standard deviation,
+SUM, calculating the sum,
+VARIANCE, calculating the variance.
+The general syntax for using Group functions is :
+
+SELECT <column, ...>, group_function(column)
+
+FROM <table>
+
+WHERE <condition>
+
+[GROUP BY <column>]
+
+[ORDER BY <column>]
+
+Note that the column on which the group function is applied must exist in the SELECT column list.
+
+For example, the following selects the maximum salary from  the employee table.
+
+SQL> SELECT dept, MAX(sal)
+
+    FROM employee;
+
+Using Group Functions
+You can use AVG and SUM for numeric data. MIN and MAX can be applied on any data type including numbers, dates and strings. The order is defined accordingly.
+
+Group functions ignore the NULL values in the column. To enforce the group functions ti include the NULL value, use NVL function.
+
+For example, the following statement forces to take the average for all salary values even including 0 (although it is an odd case, let's assume this is possible.)
+
+SQL> SELECT dept, AVG(NVL(sal,0))
+
+    FROM employee;
+
+Using Group-By Clause
+Note that ALL columns in the SELECT list that are not in group functions must be in the GROUP-By clause.
+
+For example,
+
+SQL> SELECT dept, job, MAX(sal)
+
+     FROM employee
+
+     GROUP BY dept, job;
+
+The following statement is thus illegal, because column dept is not in an aggregate function and is not in GROUP-BY clause.
+
+SQL> SELECT dept, MAX(sal)
+
+     FROM employee;
+
+The correct statement which selects the maximum salary for each department, should be:
+
+SQL> SELECT dept, MAX(sal)
+
+     FROM employee
+
+     GROUP BY dept;
+
+Using Having-Clause
+To exclude some group results, use Having-clause.
+
+For example,
+
+SQL> SELECT dept, MAX(sal)
+
+     FROM employee
+
+     GROUP BY dept
+
+           HAVING MAX(sal) > 2000;
+
+Note that you CANNOT use WHERE clause to restrict  groups. For example, the following is illegal:
+
+SQL> SELECT dept, MAX(sal)
+
+     FROM employee
+
+     WHERE MAX(sal) > 2000
+
+     GROUP BY dept;
+
+This is because the group function cannot be used in WHERE clause.
+
+Nesting Group Functions
+You can nest group function calls. For example, the following example to show the maximum of the average salary of all departments,
+
+SQL> SELECT MAX(AVE(sal)) 
+
+    FROM emp
+
+    GROUP BY dept_no;
+
+
+
+
+    select country, avg(weight) from survey group by country;
+
+    

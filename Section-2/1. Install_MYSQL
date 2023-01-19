@@ -1,0 +1,38 @@
+// Install MYSQL in Ubuntu
+
+## Step 1 : To install it, update the package index on your server if you’ve not done so recently:
+
+sudo apt update
+
+## Step 2 : Then install the mysql-server package:
+
+sudo apt install mysql-server
+
+## Step 3 : Ensure that the server is running using the systemctl start command:
+
+sudo systemctl start mysql.service
+
+
+// Configuring MySQL
+
+## First, open up the MySQL prompt 
+
+sudo mysql
+
+## Then run the following ALTER USER command to change the root user’s authentication method
+    to one that uses a password. The following example changes the authentication method to mysql_native_password:
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+
+## After making this change, exit the MySQL prompt:
+
+exit
+
+
+### lOGIN :  "mysql -u root -p"  ###
+
+
+//Install MYSQL in Windows.
+
+https://dev.mysql.com/doc/refman/8.0/en/windows-installation.html
+

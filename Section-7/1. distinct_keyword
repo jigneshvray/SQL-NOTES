@@ -1,0 +1,12 @@
+## The SELECT DISTINCT statement is used to return only distinct (different) values.
+
+#  SELECT DISTINCT column1, column2, ... FROM table_name;
+
+Exapmle : select distinct name from users;
+
+//It will not show duplicet data.
+
+
+### COUNTING DISTINCT VALUES ###
+
+select COUNT(distinct name,age) from users;

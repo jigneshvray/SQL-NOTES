@@ -1,0 +1,21 @@
+
+### EXPORT DB
+---------------------------------------------------------------------------------------------------------
+
+
+# Go to mysql bin dir.
+
+# Once you are in that directory just run below command :
+
+# " mysqldump -u YourUser -p YourDatabaseName > wantedsqlfile.sql"
+
+# Exapmle : mysqldump -u root test > test.sql     Note : after > we can specify the location as well.
+
+
+
+
+### IMPORT DB
+-----------------------------------------------------------------------------------------------------------
+
+# mysql -u {DATABASE_USERNAME} -p {DATABASE_NAME} < "path/to/file/database-to-import.sql" 
+
